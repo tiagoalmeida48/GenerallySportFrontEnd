@@ -2456,6 +2456,14 @@ Cart Area
   font-size: 12px;
   color: red;
 }
+#fotoPerfil {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 100%;
+  box-shadow: 5px 5px 5px #ccc;
+  margin: 20px 0;
+}
 /*
 ======================
 Cart Area Media Query

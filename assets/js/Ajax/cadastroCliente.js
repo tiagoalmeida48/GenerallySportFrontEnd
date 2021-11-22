@@ -157,9 +157,29 @@ $(function(){
             }
             
             var cliente = {
-
+                nome: $("#nome").val(),
+                cpf: $("#cpf").val().replace('.', '').replace('.', '').replace('-', ''),
+                dataNascimento: $("#dataNascimento").val(),
+                sexo: "F",
+                celular: $("#celular").val().replace('(', '').replace(') ', '').replace('-', ''),
+                telefone: $("#telefone").val().replace('(', '').replace(') ', '').replace('-', ''),
+                email: $("#email").val(),
+                senha: $("#senha").val(),
+                caminhoFoto: "",
+                endereco: {
+                    cep: $("#cep").val().replace('-', ""),
+                    logradouro: $("#logradouro").val(),
+                    numero: $("#numero").val(),
+                    complemento: $("#complemento").val(),
+                    bairro: $("#bairro").val(),
+                    cidade: $("#cidade").val(),
+                    uf: $("#uf").val(),
+                }
             };
-            
+
+            localStorage.setItem('cpf', cliente.cpf);
+
+            console.log(JSON.stringify(cliente));
             $.ajax({
                 url: 'https://localhost:44392/api/Cliente',
                 type: "POST",
@@ -173,6 +193,7 @@ $(function(){
                     console.log("Finalizado")
                 }
             });
+            location.href = 'cadastroFotoCliente.html'
         }
     });
 });

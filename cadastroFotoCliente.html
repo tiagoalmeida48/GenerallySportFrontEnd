@@ -111,102 +111,13 @@
           <br><br>
           <div class="container">
 
-            <form id="formCadastroCliente" action="" method="post" >
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="nome">Nome Completo</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="nome" placeholder="Digite seu nome completo" data-nomeCampo="Nome Completo" required>
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="dataNascimento">Data de nascimento</label>
-                  <input type="date" class="form-control form-control-lg"
-                    id="dataNascimento" placeholder="Digite sua data de nascimento" data-nomeCampo="Data de nascimento" required>
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="cpf">CPF</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="cpf" placeholder="Digite seu CPF" size="14" data-nomeCampo="CPF" required>
-                  <span id="cpfInvalido"></span>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="rbFeminino">Sexo</label><br>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="rbSexo" id="rbFeminino" value="F">
-                    <label class="form-check-label" for="rbFeminino">Feminino</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="rbSexo" id="rbMasculino" value="M">
-                    <label class="form-check-label" for="rbMasculino">Masculino</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="rbSexo" id="rbOutros" value="O">
-                    <label class="form-check-label" for="rbOutros">Outros generos</label>
-                  </div>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="telefone">Telefone</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="telefone" placeholder="Digite seu número de telefone com DDD" size="10" data-nomeCampo="Telefone">
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="celular">Celular</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="celular" placeholder="Digite seu número de celular com DDD" size="11" data-nomeCampo="Celular" required>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="email">E-mail</label>
-                  <input type="email" class="form-control form-control-lg"
-                    id="email" placeholder="Digite seu e-mail" data-nomeCampo="E-mail" required>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="senha">Senha</label>
-                  <input type="password" class="form-control form-control-lg"
-                    id="senha" placeholder="Digite sua senha" data-nomeCampo="Senha" required>
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="redigiteSenha">Confirmar Senha</label>
-                  <input type="password" class="form-control form-control-lg"
-                    id="redigiteSenha" placeholder="Redigite sua senha" data-nomeCampo="Confirmar senha" required>
-                  <span id="senhasDiferentes"></span>
-                </div>
-                <div class="form-group col-md-2">
-                  <label for="cep">CEP</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="cep" placeholder="Degite seu CEP" size="8" data-nomeCampo="CEP" required>
-                </div>
-                <div class="form-group col-md-8">
-                  <label for="logradouro">Endereço</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="logradouro" placeholder="Rua / Avenida / Travessa / Viela" data-nomeCampo="Logradouro" required>
-                </div>
-                <div class="form-group col-md-2">
-                  <label for="numero">Número</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="numero" placeholder="Digite o número" data-nomeCampo="Número" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="complemento">Complemento</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="complemento" placeholder="apartamento, casa, etc.">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="bairro">Bairro</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="bairro" placeholder="Digite seu bairro" data-nomeCampo="Bairro">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="cidade">Cidade</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="cidade" placeholder="Digite sua cidade" data-nomeCampo="Cidade" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="uf">Estado</label>
-                  <input type="text" class="form-control form-control-lg"
-                    id="uf" placeholder="Digite seu estado" size="2" data-nomeCampo="Estado" required>
-                </div>  
-              </div>            
-              <button type="submit" id="btnCadastroCliente" class="btn btn-success btn-lg">Próximo passo</button>
+            <form id="formCadastrarFotoCliente" action="" method="post" >
+              <div class="form-group">
+                <img src="" alt="" id="fotoPerfil">
+                <input type="file" class="form-control-file" id="foto">
+              </div>          
+              <button type="button" id="btnCadastroCliente" class="btn btn-success btn-lg">Cadastrar foto</button>
+              <button type="button" id="btnIgnorarEtapa" class="btn btn-primary btn-lg">Ignorar essa etapa</button>
             </form>
           </div>
 
@@ -306,7 +217,7 @@
           <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
           <!-- Custom JavaScript -->
-          <script src="./assets/js/Ajax/cadastroCliente.js"></script>
+          <script src="./assets/js/Ajax/cadastroFotoCliente.js"></script>
         </body>
 
       </html>
