@@ -15,6 +15,8 @@
         }
     }); */
 
+    
+
     $("#formasPagamento").change(function(e) {
     var formaDePag = e.currentTarget.value;
     
@@ -23,9 +25,22 @@
     } else {
         $("#formaPagCredito").show()
     }
+    
+    var formaDePagValue = formaDePag;
+
     });
 
- 
+    // const formaDePagValue = document.getElementById("formasPagamento");
+    // var formaDePagValue = $("#formasPagamento");
+     console.log(formaDePagValue)   
+     document.getElementById("formaPagResumo").innerHTML = formaDePagValue;
+
+     const nomeValue = document.getElementById("nome");
+     // var formaDePagValue = $("#formasPagamento");
+      console.log(nomeValue)   
+      document.getElementById("nomeResumo").innerHTML = nomeValue;
+
+    
 
     /* $(document).ready(function (){
     $(document).on("onChange", ".formasPagamento", function() {
