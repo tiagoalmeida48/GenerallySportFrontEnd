@@ -1,4 +1,4 @@
-var token = localStorage.getItem('token');
+var token = sessionStorage.getItem('token');
 if(token != null){
     $(".imgLogin").attr('src', './assets/images/profile1.jpg');
 }
@@ -19,15 +19,43 @@ $(function () {
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(cliente),
             success: function (result) { 
-                localStorage.setItem('token', result.data.token);
-                location.href = 'index.html';
-            },
-            error: function (err) {
-                console.log(err.responseText);
-            },
-            complete: function () {
-                console.log("Finalizado") 
+                sessionStorage.setItem('token', result.data.token);
+                gravarNomeCliente();
+                //location.href = 'index.html';
             }
         });
+    }
+
+    function gravarIdCliente(token){
+        token = sessionStorage.getItem('token');
+
+        $.ajax({
+            url: 'https://localhost:44392/ObterIdUsuarioLogado',
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            headers: { 'Authorization': 'Bearer ' + token },
+            success: function (result) { 
+                console.log(result);
+            }
+        });
+    }
+
+    function gravarNomeCliente(){
+        var resultNome;
+        console.log('ok')
+        token = sessionStorage.getItem('token');
+        $.ajax({
+            url: 'https://localhost:44392/ObterNomeUsuarioLogado',
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            headers: { 'Authorization': 'Bearer ' + token },
+            success: function (result) { 
+                console.log(result);
+            }
+        });
+
+        //console.log(resultNome);
     }
 });
