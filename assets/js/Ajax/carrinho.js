@@ -1,5 +1,5 @@
 $(function(){
-    var token = localStorage.getItem("token");
+    var token = sessionStorage.getItem("token");
     var qtdeCarrinho;
     var precoAtualizado = 0;
     var idCarrinho = 0;
@@ -12,7 +12,7 @@ $(function(){
 
         if(qtdeCarrinho > 1){
             qtdeCarrinho -= 1;
-            var precoAtualizadoVenda = qtdeCarrinho * parseFloat(precoAtualizado.replace('R$', '').replace(',', '.'));
+            var precoAtualizadoVenda = qtdeCarrinho * parseFloat(precoAtualizado.replace('R$', '').replace('.', ''));
             $(this).parent().find("input").val(qtdeCarrinho);
             $("#precoDetalhesProduto").html(precoAtualizadoVenda.toLocaleString('pt-BR', {style: 'currency', 'currency': 'BRL'}));
 
@@ -62,7 +62,7 @@ $(function(){
 
         if(qtdeCarrinho < qtdeEstoque){
             qtdeCarrinho += 1;
-            var precoAtualizadoVenda = qtdeCarrinho * parseFloat(precoAtualizado.replace('R$', '').replace(',', '.'));
+            var precoAtualizadoVenda = qtdeCarrinho * parseFloat(precoAtualizado.replace('R$', '').replace('.', ''));
             $(this).parent().find("input").val(qtdeCarrinho);
             $("#precoDetalhesProduto").html(precoAtualizadoVenda.toLocaleString('pt-BR', {style: 'currency', 'currency': 'BRL'}));
 
@@ -146,6 +146,12 @@ $(function(){
                 });
             }
         });
+    });
+
+    $("#finalizarCarrinho").click(function(e){
+        e.preventDefault();
+        sessionStorage.setItem("valorTotalPedido", $(".valorTotal").text());
+        location.href = "confirmar-endereco.html";
     });
 
     function mostrarCarrinho(result){

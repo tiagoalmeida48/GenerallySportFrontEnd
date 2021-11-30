@@ -1943,9 +1943,11 @@ Product Details
 .new__price {
   font-size: 2rem;
   color: var(--orange);
-  margin-left: 10%;
 }
-
+.cart-btns h3 {
+  margin-left: 40%;
+  text-align: center;
+}
 .product-detail__content .product__review {
   display: flex;
   align-items: center;
@@ -2357,28 +2359,61 @@ Cart Area
 
 .cart-btns {
   display: flex;
-  justify-content: space-between;
   border-bottom: 1px solid var(--primaryColor);
   padding-bottom: 4rem;
-  margin: 3rem 0;
 }
 
 .continue__shopping a:link,
-.continue__shopping a:visited {
+.continue__shopping a:visited,
+.finalizar__pedido a:link,
+.finalizar__pedido a:visited {
   font-size: 1.5rem;
-  padding: 1.2rem 3rem;
+  padding: 10px;
   color: var(--black);
   text-transform: uppercase;
   border: 1px solid var(--black);
   transition: all 0.4s ease-in-out;
+  white-space: nowrap;
 }
 
-.continue__shopping a:hover {
+.continue__shopping a:hover,
+.finalizar__pedido a:hover {
   background-color: var(--black);
   color: var(--white);
   border: 1px solid var(--black);
 }
 
+.btnPersonalizado {
+  margin: 20px auto;
+  text-align: center;
+}
+.btnPersonalizado a:link,
+.btnPersonalizado a:visited {
+  font-size: 1.5rem;
+  padding: 10px;
+  color: var(--black);
+  text-transform: uppercase;
+  border: 1px solid var(--black);
+  transition: all 0.4s ease-in-out;
+  white-space: nowrap;
+  width: 100px !important;
+}
+
+.btnPersonalizado a:hover {
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+}
+
+.finalizar__pedido, .continue__shopping {
+  margin: 10px 10px 0 0;
+}
+
+.linha {
+  border: 1px solid #c7c7c7;
+  margin: 10px 0;
+  color: #000 !important;
+}
 .cart__totals {
   width: 60rem;
   /* height: 30rem; */
@@ -2463,6 +2498,69 @@ Cart Area
   border-radius: 100%;
   box-shadow: 5px 5px 5px #ccc;
   margin: 20px 0;
+}
+
+.formEndereco {
+  border: 1px solid #000 !important;
+  border-radius: 5px !important;
+  border: #000;
+  padding: 20px;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.dadosCliente {
+  text-align: left;
+  margin-left: 20px;
+}
+.form-control {
+  border-radius: 0 !important;
+  font-size: 14px !important;
+}
+#formFormasPagamentos {
+  width: 500px;
+  margin: 0 auto;
+}
+
+#btnConfirmarFormaPagamento{
+  margin-bottom: 20px;
+}
+
+.tituloFormaPagamento {
+  text-align: center;
+}
+
+.imgFotoResumo > img {
+  width: 80px;
+  float: left;
+  margin-left: 38vw;
+}
+/* .divInfoResumo {
+  padding-left: 100px;
+  width: 90%;
+} */
+.infoResumo > * {
+  margin: 0 auto;
+}
+
+.tituloValorResumo, .numeroCartao, .formaPagamento, .parcela {
+  text-align: center;
+}
+.finalizarCompra {
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.containerQuemSomos, .containerPrivacidade{
+  margin: 0 20px !important;
+}
+.infoBoleto {
+  background: yellow;
+  padding: 10px;
+  text-align: justify;
+}
+.card-text {
+  text-align: center;
 }
 /*
 ======================

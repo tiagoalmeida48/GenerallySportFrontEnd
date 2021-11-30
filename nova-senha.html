@@ -100,59 +100,44 @@
               <div class="form-row">
                 <form>
                   <div class="form-group">
-                    <label for="formasPagamento">Formas de Pagamento</label>
-
-                     <select id="formasPagamento" >
-                     <option value="debitoCredito">Débito/Crédito</option>
-                     <option value="boleto">Boleto</option>
-
-                     </select>
-
- 
-                  </div>
-
-
-                    <div class="form-group" id="formaPagCredito">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" class="form-control form-control-lg"
-                          id="nome">
-                        <br>
-                         <label for="numeroCartao">Número Cartão</label>
-                        <input type="number" class="form-control form-control-lg"
-                          id="numeroCartao">
-                          <br>
-                         <label for="vencimento">Data Vencimento</label>
-                        <input type="date" class="form-control form-control-lg"
-                          id="vencimento">
-                          <br>
-                         <label for="cvv">CVV</label>
-                        <input type="number" class="form-control form-control-lg"
-                          id="cvv">
-                          <br>
-                          <label for="parcelamento">Escolher Parcela</label>
-
-                          <select id="parcelamento">
-                           <option value="1">1x parcelas</option>
-                           <option value="2">2x parcelas</option>
-                           <option value="3">3x parcelas</option>
-                           <option value="4">4x parcelas</option>
-                           <option value="5">5x parcelas</option>
-
-                            </select>
-                          
-                      </div>
-
-
-                  <a type="button" href="resumoPagamento.html">Próximo</a>
-            
-
+                    <label for="email">Nova &nbsp; Senha.</label>
+                    <input type="email" class="form-control form-control-lg"
+                      id="email" aria-describedby="emailHelp"
+                      placeholder="nova &nbsp; senha" required>
+                      <br>
+                    <label for="email">Confirmar &nbsp; Senha.</label>
+                    <input type="email" class="form-control form-control-lg"
+                      id="email" aria-describedby="emailHelp"
+                      placeholder="confirmar &nbsp; senha" required>
+                      <br>
+                    <a href="/login.html">
+                    <button type="button" id="btnAcessarLogin" class="btn
+                    btn-success btn-lg"><h4>Cadastar &nbsp; Nova &nbsp; Senha</h4></button>
+                    </a>
+                </div>
+                 
                 </form>
 
               </div>
             </ul>
           </div>
           <br>
-
+          <!-- NewsLetter -->
+          <section class="section newsletter" id="contact">
+            <div class="container">
+              <div class="newsletter__content">
+                <div class="newsletter__data">
+                  <h3>Receba nossas promoções por e-mail.</h3>
+                  <p>Seja o primeiro a saber de nossas promoções.</p>
+                </div>
+                <form action="#">
+                  <input type="email" placeholder="Digite seu e-mail."
+                    class="newsletter__email">
+                  <a class="newsletter__link" href="#">Enviar</a>
+                </form>
+              </div>
+            </div>
+          </section>
 
         </main>
 
@@ -233,7 +218,7 @@
 
         <!-- Custom JavaScript -->
         <script src="./assets/js/Ajax/login.js"></script>
-        <script src="./assets/js/Ajax/FormasDePagamento.js"></script>
+        <script src="./assets/js/Ajax/login.js"></script>
         <script src="./assets/js/index.js"></script>
         <script src="./assets/js/slider.js"></script>
 

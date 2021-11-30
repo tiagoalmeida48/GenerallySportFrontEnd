@@ -5,7 +5,7 @@ $(function () {
     var precoAtualizado = 0;
     var precoUnitario = 0;
     var qtdeEstoque = 0;
-    var token = localStorage.getItem('token');
+    var token = sessionStorage.getItem('token');
 
     $(".minus-btn").click(function () {
         if (qtdeProduto > 1) {
@@ -68,14 +68,17 @@ $(function () {
         $("#imgDetalhesProduto").attr('src', './assets/images/produtos/' + result.caminhoFoto)
         $("#precoDetalhesProduto").html(result.precoVenda.toLocaleString('pt-BR', { style: 'currency', 'currency': 'BRL' }));
 
-        if (qtdeEstoque > 0)
+        if (qtdeEstoque > 0){
             $("#estoqueDetalhesProduto").html('Total de (' + qtdeEstoque + ' items)');
-        else
+            $(".product-details__btn").show();
+        } else {
             $("#estoqueDetalhesProduto").html("<b style='color: red'>PRODUTO INDISPONÍVEL</b>");
+            $(".product-details__btn").hide();
+        }
     }
 
     $(".addCarrinho").click(function (e) {
-        e.preventDefault;
+        e.preventDefault();
         if (token == null)
             location.href = 'login.html';
         else {
@@ -83,9 +86,9 @@ $(function () {
             carrinho = {
                 "idProduto": parseInt(id),
                 "qtde": parseInt($(".counter-btn").val()),
-                "preco": parseFloat(preco[1].replace(",", "."))
+                "preco": parseFloat(preco[1].replace('.', ''))
             };
-            console.log("ok");
+            
             $.ajax({
                 url: 'https://localhost:44392/api/Carrinho/',
                 type: "POST",
@@ -101,6 +104,38 @@ $(function () {
                 }
             });
             location.href = 'carrinho.html';
+        }
+    });
+
+    $(".finalizarCompra").click(function (e) {
+        e.preventDefault();
+        if (token == null)
+            location.href = 'login.html';
+        else {
+            var preco = $("#precoDetalhesProduto").text().split("R$");
+            carrinho = {
+                "idProduto": parseInt(id),
+                "qtde": parseInt($(".counter-btn").val()),
+                "preco": parseFloat(preco[1].replace('.', ''))
+            };
+
+            sessionStorage.setItem('valorTotalPedido', parseFloat(preco[1].replace('.', '')));
+            
+            $.ajax({
+                url: 'https://localhost:44392/api/Carrinho/',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                headers: { 'Authorization': 'Bearer ' + token },
+                data: JSON.stringify(carrinho),
+                error: function (err) {
+                    console.log(err);
+                },
+                complete: function () {
+                    //console.log("Finalizado")
+                }
+            });
+            location.href = 'confirmar-endereco.html';
         }
     });
 });

@@ -193,7 +193,7 @@ $(function(){
                     console.log("Finalizado")
                 }
             });
-            location.href = 'cadastroFotoCliente.html'
+            location.href = 'cadastro-foto.html'
         }
     });
 });

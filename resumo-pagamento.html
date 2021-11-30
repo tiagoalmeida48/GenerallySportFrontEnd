@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="shortcut icon" href="./assets/images/favicon.ico"
+      type="image/x-icon" />
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Carousel -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Custom StyleSheet -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <title>Generally Sports</title>
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <header id="header" class="header">
+      <div class="navigation">
+        <div class="container">
+          <nav class="nav">
+            <div class="nav__hamburger">
+              <svg>
+                <use xlink:href="./assets/images/sprite.svg#icon-menu"></use>
+              </svg>
+            </div>
+
+            <div class="nav__logo">
+              <a href="index.html" class="scroll-link">
+                <img src="./assets/images/trofeu.png" width="33">
+                Generally Sports
+              </a>
+            </div>
+
+            <div class="nav__menu">
+              <div class="menu__top">
+                <span class="nav__category"></span>
+                <a href="#" class="close__toggle">
+                  <svg>
+                    <use xlink:href="./assets/images/sprite.svg#icon-cross"></use>
+                  </svg>
+                </a>
+              </div>
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="/index.html#header" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                  <a href="/index.html#category" class="nav__link">Produtos</a>
+                </li>
+                <li class="nav__item">
+                  <a href="/index.html#vouchers" class="nav__link">Vouchers</a>
+                </li>
+                <li class="nav__item">
+                  <a href="/index.html#contato" class="nav__link">Contato</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__icons">
+              <a href="login.html">
+                <img src="./assets/images/cadeado.png" class="imgLogin"
+                  width="43">
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div><br>
+        <center><h2>Resumo da compra</h2></center>
+      </div><br><br>
+      <div class="produtosCompra"></div>
+      <div class="linha"></div><br>
+      <h3 class="numeroCartao">Número cartão: <span class="numCartao"></span></h3>
+      <h3 class="formaPagamento">Forma de pagamento: <span class="formaPag"></span></h3>
+      <h3 class="parcela">Parcelado em <span class="parcelado"></span></h3>
+      <h3 class="tituloValorResumo">Total da Compra: <span class=" valorTotal"></span>
+      </h3><br>
+
+      <center>
+        <h3 class="dtEntrega">Entregar no dia: <span class="dataEntrega"></span></h3>
+        <br>
+        <h3>Endereço de entrega:</h3>
+        <h3 class="numCep">CEP: <span class="cep"></span></h3>
+        <h3 class="logr">Logradouro: <span class="logradouro"></span>, nº <span class="numero"></span></h3>
+        <h3 class="complem">Compremento: <span class="complemento"></span></h3>
+        <h3 class="bair">Bairro: <span class="bairro"></span></h3>
+        <h3 class="cid">Cidade: <span class="cidade"></span> / <span class="estado"></span></h3>
+        <br>
+      </center>
+      <div class="cart-btns">
+          <div class="finalizar__pedido finalizarCompra">
+            <a href="" id="finalCompra">FINALIZAR COMPRA</a>
+          </div>
+      </div>
+    </main>
+    <!-- End Main -->
+
+    <!-- Footer -->
+    <footer id="footer" class="section footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer-top__box">
+            <h3>EXTRAS</h3>
+            <a href="lgpd.html">L G P D</a>
+            <a href="#">Quem Somos</a>
+            <a href="#">Mapa do Site</a>
+          </div>
+          <div class="footer-top__box">
+            <h3>INFORMAÇÕES</h3>
+            <a href="#">Politica e Privacidade</a>
+            <a href="#">Seja Nosso Parceiro</a>
+          </div>
+          <div class="footer-top__box">
+            <h3>MINHA CONTA</h3>
+            <a href="#">Meus Dados</a>
+            <a href="#">Minhas Compras</a>
+          </div>
+          <div class="footer-top__box">
+            <h3>LOCALIZAÇÃO</h3>
+            <div>
+              <span>
+                <svg>
+                  <use
+                    xlink:href="./assets/images/sprite.svg#icon-location"></use>
+                </svg>
+              </span>
+              Av. Ramiro Colleoni, 151 - Centro <br> Santo André - SP
+            </div>
+            <div>
+              <span>
+                <svg>
+                  <use
+                    xlink:href="./assets/images/sprite.svg#icon-envelop"></use>
+                </svg>
+              </span>
+              generallysports@gmail.com
+            </div>
+            <div>
+              <span>
+                <svg>
+                  <use
+                    xlink:href="./assets/images/sprite.svg#icon-phone"></use>
+                </svg>
+              </span>
+              (11) 2988-5885
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer-bottom__box">
+          Todos os direitos reservados High System Cast &copy;2021
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Go To -->
+    <a href="#header" class="goto-top scroll-link">
+      <svg>
+        <use xlink:href="./assets/images/sprite.svg#icon-arrow-up"></use>
+      </svg>
+    </a>
+
+    <!-- Glide Carousel Script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+    <!-- Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="./assets/js/Ajax/login.js"></script>
+    <script src="./assets/js/Ajax/resumoPagamento.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/slider.js"></script>
+
+  </body>
+
+</html>

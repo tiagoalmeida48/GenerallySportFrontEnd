@@ -20,42 +20,37 @@ $(function () {
             data: JSON.stringify(cliente),
             success: function (result) { 
                 sessionStorage.setItem('token', result.data.token);
+                gravarIdCliente();
                 gravarNomeCliente();
-                //location.href = 'index.html';
+                location.href = 'index.html';
+            },
+            error: function (erro) {
+                console.log(erro)
             }
         });
     }
 
-    function gravarIdCliente(token){
-        token = sessionStorage.getItem('token');
-
+    function gravarIdCliente(){
         $.ajax({
             url: 'https://localhost:44392/ObterIdUsuarioLogado',
             type: "GET",
-            dataType: "json",
             contentType: "application/json; charset=utf-8",
             headers: { 'Authorization': 'Bearer ' + token },
             success: function (result) { 
-                console.log(result);
+                sessionStorage.setItem('idCliente', result);
             }
         });
     }
 
     function gravarNomeCliente(){
-        var resultNome;
-        console.log('ok')
-        token = sessionStorage.getItem('token');
         $.ajax({
             url: 'https://localhost:44392/ObterNomeUsuarioLogado',
             type: "GET",
-            dataType: "json",
             contentType: "application/json; charset=utf-8",
             headers: { 'Authorization': 'Bearer ' + token },
             success: function (result) { 
-                console.log(result);
+                sessionStorage.setItem('nomeCliente', result);
             }
         });
-
-        //console.log(resultNome);
     }
 });
