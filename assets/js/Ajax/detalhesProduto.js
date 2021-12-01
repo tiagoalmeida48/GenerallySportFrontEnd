@@ -79,6 +79,7 @@ $(function () {
 
     $(".addCarrinho").click(function (e) {
         e.preventDefault();
+        sessionStorage.removeItem('voucher');
         if (token == null)
             location.href = 'login.html';
         else {
@@ -109,6 +110,7 @@ $(function () {
 
     $(".finalizarCompra").click(function (e) {
         e.preventDefault();
+        sessionStorage.removeItem('voucher');
         if (token == null)
             location.href = 'login.html';
         else {

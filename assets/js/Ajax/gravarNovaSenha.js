@@ -1,0 +1,5 @@
+$(function(){
+    $("#btnNovaSenha").click(function(){
+        
+    })
+});

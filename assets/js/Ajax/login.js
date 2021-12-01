@@ -1,9 +1,6 @@
-var token = sessionStorage.getItem('token');
-if(token != null){
-    $(".imgLogin").attr('src', './assets/images/profile1.jpg');
-}
-
 $(function () {
+    var token = sessionStorage.getItem('token');
+    var idCliente = sessionStorage.getItem('idCliente');
     $("#btnAcessarLogin").click(logar);
 
     function logar(){
@@ -11,7 +8,6 @@ $(function () {
             email: $('#email').val(),
             senha: $('#senha').val()
         }
-
         $.ajax({
             url: 'https://localhost:44392/api/Login',
             type: "POST",
@@ -20,37 +16,53 @@ $(function () {
             data: JSON.stringify(cliente),
             success: function (result) { 
                 sessionStorage.setItem('token', result.data.token);
-                gravarIdCliente();
-                gravarNomeCliente();
-                location.href = 'index.html';
+                token = sessionStorage.getItem('token')
+                $.ajax({
+                    url: 'https://localhost:44392/ObterIdUsuarioLogado',
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    headers: { 'Authorization': 'Bearer ' + token },
+                    success: function (result) { 
+                        sessionStorage.setItem('idCliente', result);
+                        $.ajax({
+                            url: 'https://localhost:44392/ObterNomeUsuarioLogado',
+                            type: "GET",
+                            contentType: "application/json; charset=utf-8",
+                            headers: { 'Authorization': 'Bearer ' + token },
+                            success: function (result) { 
+                                sessionStorage.setItem('nomeCliente', result);
+                                idCliente = sessionStorage.getItem('idCliente');
+                                $.ajax({
+                                    url: 'https://localhost:44392/api/Cliente/' + idCliente,
+                                    type: "GET",
+                                    contentType: "application/json; charset=utf-8",
+                                    headers: { 'Authorization': 'Bearer ' + token },
+                                    success: function (result) { 
+                                        sessionStorage.setItem('fotoCliente', result.caminhoFoto)
+                                        location.href = 'index.html';
+                                    },
+                                    error: function (erro) {
+                                        console.log(erro)
+                                    }
+                                });
+                            },
+                            error: function (erro) {
+                                console.log(erro)
+                            }
+                        });
+                    },
+                    error: function (erro) {
+                        console.log(erro)
+                    }
+                });
             },
             error: function (erro) {
                 console.log(erro)
             }
         });
-    }
 
-    function gravarIdCliente(){
-        $.ajax({
-            url: 'https://localhost:44392/ObterIdUsuarioLogado',
-            type: "GET",
-            contentType: "application/json; charset=utf-8",
-            headers: { 'Authorization': 'Bearer ' + token },
-            success: function (result) { 
-                sessionStorage.setItem('idCliente', result);
-            }
-        });
-    }
 
-    function gravarNomeCliente(){
-        $.ajax({
-            url: 'https://localhost:44392/ObterNomeUsuarioLogado',
-            type: "GET",
-            contentType: "application/json; charset=utf-8",
-            headers: { 'Authorization': 'Bearer ' + token },
-            success: function (result) { 
-                sessionStorage.setItem('nomeCliente', result);
-            }
-        });
+
+
     }
 });

@@ -3,8 +3,11 @@ $("#footer").css('margin-top', '149px');
 
 $(function () {
     var formaDePag = $("#formasPagamento").val();
-    var valorCompra = parseFloat(sessionStorage.getItem('valorTotalPedido').replace('R$', '').replace(',', '.'));
-    var url = new URL(window.location.href);
+    
+    if(sessionStorage.getItem('valorTotalPedido') != null && sessionStorage.getItem('valorTotalPedido') != "")
+        var valorCompra = parseFloat(sessionStorage.getItem('valorTotalPedido').replace('R$', '').replace(',', '.'));
+    
+        var url = new URL(window.location.href);
     var voucherParam = url.searchParams.get('voucher');
 
     if (voucherParam != null && voucherParam != "") {

@@ -1,5 +1,9 @@
 $(function(){
     var token = sessionStorage.getItem("token");
+
+    if(token == null || token == "")
+        location.href = "login.html";
+
     var qtdeCarrinho;
     var precoAtualizado = 0;
     var idCarrinho = 0;

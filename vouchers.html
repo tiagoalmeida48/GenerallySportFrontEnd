@@ -30,65 +30,64 @@
 
   <body>
 
-    <!-- Header -->
-    <header id="header" class="header">
-      <div class="navigation">
-        <div class="container">
-          <nav class="nav">
-            <div class="nav__hamburger">
-              <svg>
-                <use xlink:href="./assets/images/sprite.svg#icon-menu"></use>
-              </svg>
-            </div>
+   <!-- Header -->
+   <header id="header" class="header">
+    <div class="navigation">
+      <div class="container">
+        <nav class="nav">
+          <div class="nav__hamburger">
+            <svg>
+              <use xlink:href="./assets/images/sprite.svg#icon-menu"></use>
+            </svg>
+          </div>
 
-            <div class="nav__logo">
-              <a href="index.html" class="scroll-link">
-                <img src="./assets/images/trofeu.png" width="33">
-                Generally Sports
+          <div class="nav__logo">
+            <a href="/" class="scroll-link">
+              <img src="./assets/images/trofeu.png" width="33">
+              Generally Sports
+            </a>
+          </div>
+
+          <div class="nav__menu">
+            <div class="menu__top">
+              <span class="nav__category"></span>
+              <a href="#" class="close__toggle">
+                <svg>
+                  <use xlink:href="./assets/images/sprite.svg#icon-cross"></use>
+                </svg>
               </a>
             </div>
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="/index.html#header" class="nav__link">Home</a>
+              </li>
+              <li class="nav__item">
+                <a href="/index.html#category" class="nav__link">Produtos</a>
+              </li>
+              <li class="nav__item">
+                <a href="/index.html#vouchers" class="nav__link">Vouchers</a>
+              </li>
+              <li class="nav__item">
+                <a href="/index.html#contato" class="nav__link">Contato</a>
+              </li>
+            </ul>
+          </div>
 
-            <div class="nav__menu">
-              <div class="menu__top">
-                <span class="nav__category"></span>
-                <a href="#" class="close__toggle">
-                  <svg>
-                    <use xlink:href="./assets/images/sprite.svg#icon-cross"></use>
-                  </svg>
-                </a>
-              </div>
-              <ul class="nav__list">
-                <li class="nav__item">
-                  <a href="/index.html#header" class="nav__link">Home</a>
-                </li>
-                <li class="nav__item">
-                  <a href="/index.html#category" class="nav__link">Produtos</a>
-                </li>
-                <li class="nav__item">
-                  <a href="/index.html#vouchers" class="nav__link">Vouchers</a>
-                </li>
-                <li class="nav__item">
-                  <a href="/index.html#contato" class="nav__link">Contato</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="nav__icons">
-              <a href="login.html">
-                <img src="./assets/images/cadeado.png" class="imgLogin" width="43">
-              </a>
+          <div class="nav__icons">
+            <a href="index.html" class="linkSairSistema">
+              <img src="./assets/images/sair.png" title="Sair da conta" width="43">
+            </a>
+            &nbsp; &nbsp;
+            <a href="login.html" class="linkPerfil">
+              <img src="./assets/images/cadeado.png" title="Meus dados" class="imgLogin" width="43">
+            </a>
               &nbsp; &nbsp;
               <div class="nav__icons">
-                <a href="">
-                  <img src="./assets/images/lupa.png" width="40">
+                <a href="carrinho.html">
+                  <img src="./assets/images/carrinho.png" title="Carrinho" width="40">
                 </a>
-                &nbsp; &nbsp;
-                <div class="nav__icons">
-                  <a href="carrinho.html">
-                    <img src="./assets/images/carrinho.png" width="40">
-                  </a>
-                </nav>
-              </div>
+                
+              </nav>
             </div>
 
             <div class="page__title-area">
@@ -204,18 +203,17 @@
         <div class="footer-top__box">
           <h3>EXTRAS</h3>
           <a href="lgpd.html">L G P D</a>
-          <a href="#">Quem Somos</a>
-          <a href="#">Mapa do Site</a>
+          <a href="quem-somos.html">Quem Somos</a>
         </div>
         <div class="footer-top__box">
           <h3>INFORMAÇÕES</h3>
-          <a href="#">Politica e Privacidade</a>
-          <a href="#">Seja Nosso Parceiro</a>
+          <a href="politica-privacidade.html">Politica e Privacidade</a>
+          <a href="parceiros.html">Seja Nosso Parceiro</a>
         </div>
         <div class="footer-top__box">
           <h3>MINHA CONTA</h3>
-          <a href="#">Meus Dados</a>
-          <a href="#">Minhas Compras</a>
+          <a href="meus-dados.html">Meus Dados</a>
+          <a href="meus-produtos.html">Minhas Compras</a>
         </div>
         <div class="footer-top__box">
           <h3>LOCALIZAÇÃO</h3>
@@ -240,8 +238,7 @@
           <div>
             <span>
               <svg>
-                <use
-                  xlink:href="./assets/images/sprite.svg#icon-phone"></use>
+                <use xlink:href="./assets/images/sprite.svg#icon-phone"></use>
               </svg>
             </span>
             (11) 2988-5885
@@ -272,6 +269,7 @@
 
   <!-- Custom JavaScript -->
   <script src="./assets/js/Ajax/produto.js"></script>
+  <script src="./assets/js/Ajax/autorizar.js"></script>
   <script src="./assets/js/index.js"></script>
   <script src="./assets/js/slider.js"></script>
 </body>

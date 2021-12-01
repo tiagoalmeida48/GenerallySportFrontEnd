@@ -1427,7 +1427,6 @@ Testimonial
 
 .testimonial {
   position: relative;
-  background: url("./images/testimonial.jpg") center/cover no-repeat;
   height: 50rem;
   padding: 5rem 0;
   z-index: 1;
@@ -2506,6 +2505,15 @@ Cart Area
   border: #000;
   padding: 20px;
   width: 30%;
+  margin: 0 auto;
+}
+
+.formDados {
+  border: 1px solid #000 !important;
+  border-radius: 5px !important;
+  border: #000;
+  padding: 20px;
+  width: 40%;
   margin: 0 auto;
 }
 
