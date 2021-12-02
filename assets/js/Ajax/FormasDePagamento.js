@@ -38,7 +38,10 @@ $(function () {
                 }
             },
             error: function (err) {
-                console.log(err.responseText);
+                if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
             }
         });
     } else {

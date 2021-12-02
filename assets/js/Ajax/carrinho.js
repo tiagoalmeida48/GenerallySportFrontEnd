@@ -35,7 +35,10 @@ $(function(){
                 headers: { 'Authorization': 'Bearer ' + token },
                 data: JSON.stringify(carrinho),
                 error: function (err) {
-                    console.log(err);
+                    if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
                 },
                 complete: function () {
                     $.ajax({
@@ -85,7 +88,10 @@ $(function(){
                 headers: { 'Authorization': 'Bearer ' + token },
                 data: JSON.stringify(carrinho),
                 error: function (err) {
-                    console.log(err);
+                    if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
                 },
                 complete: function () {
                     $.ajax({
@@ -118,7 +124,10 @@ $(function(){
             mostrarCarrinho(result);
         },
         error: function (err) {
-            console.log(err);
+            if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
         }
     });
     
@@ -134,7 +143,10 @@ $(function(){
                 console.log(result);
             },
             error: function (err) {
-                console.log(err);
+                if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
             },
             complete: function () {
                 $.ajax({

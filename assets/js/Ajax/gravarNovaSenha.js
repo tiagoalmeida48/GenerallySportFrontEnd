@@ -1,24 +1,23 @@
 $(function(){
-    var idCliente = sessionStorage.getItem('idCliente');
+    var url = new URL(window.location.href);
+    var idCliente = url.searchParams.get('id');
 
     $("#btnNovaSenha").click(function(e){
         e.preventDefault();
 
-        var novaSenha = {
-           // id: parseInt($("#idCliente").val()),
-            id: idCliente,
-            senha: $("#senha").val()      
-        }
+        var formdata = new FormData();
 
+        formdata.append('id', idCliente);
+        formdata.append('senha', $("#senha").val());
 
         $.ajax({
             url: 'https://localhost:44392/api/Cliente/resetarSenha/',
             type: "PUT",
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(novaSenha),
+            contentType: false,
+            processData: false,
+            data: formdata,
             success: function(){
-                location.href = 'nova-senha.html';
+                location.href = 'login.html';
             },
             error: function (err) {
                 console.log(err);

@@ -19,7 +19,9 @@ $(function () {
         },
         error: function (err) {
             if (err.status == 401)
-                location.href = "login.html";
+                        location.href = "login.html";
+                    else
+                        console.log(err);
         }
     });
 
@@ -129,7 +131,10 @@ $(function () {
                 $(".estado").html(result.endereco.uf);
             },
             error: function (err) {
-                console.log(err);
+                if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
             }
         });
     } else {
@@ -149,7 +154,10 @@ $(function () {
                 console.log(result);
             },
             error: function (err) {
-                console.log(err);
+                if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
             }
         });
     };

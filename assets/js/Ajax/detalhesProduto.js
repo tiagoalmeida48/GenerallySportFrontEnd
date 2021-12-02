@@ -43,7 +43,7 @@ $(function () {
             console.log(err.responseText);
         },
         complete: function () {
-            console.log("Finalizado")
+            //console.log("Finalizado")
         }
     });
 
@@ -98,7 +98,10 @@ $(function () {
                 headers: { 'Authorization': 'Bearer ' + token },
                 data: JSON.stringify(carrinho),
                 error: function (err) {
-                    console.log(err);
+                    if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
                 },
                 complete: function () {
                     //console.log("Finalizado")
@@ -131,7 +134,10 @@ $(function () {
                 headers: { 'Authorization': 'Bearer ' + token },
                 data: JSON.stringify(carrinho),
                 error: function (err) {
-                    console.log(err);
+                    if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
                 },
                 complete: function () {
                     //console.log("Finalizado")

@@ -80,7 +80,10 @@ $(function () {
             $("#uf").val(result.endereco.uf);
         },
         error: function (err) {
-            console.log(err);
+            if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
         }
     });
 
@@ -123,7 +126,10 @@ $(function () {
                 location.href = 'forma-pagamento.html';
             },
             error: function (err) {
-                console.log(err);
+                if (err.status == 401)
+                        location.href = "login.html";
+                    else
+                        console.log(err);
             },
             complete: function () {
             

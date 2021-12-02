@@ -11,7 +11,6 @@ $(function () {
             console.log(err.responseText);
         },
         complete: function () {
-            console.log("Finalizado")
         }
     });
 
