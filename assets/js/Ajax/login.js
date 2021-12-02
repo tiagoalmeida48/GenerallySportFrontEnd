@@ -3,7 +3,8 @@ $(function () {
     var idCliente = sessionStorage.getItem('idCliente');
     $("#btnAcessarLogin").click(logar);
 
-    function logar(){
+    function logar(e){
+        e.preventDefault();
         var cliente = {
             email: $('#email').val(),
             senha: $('#senha').val()
@@ -57,7 +58,8 @@ $(function () {
                 });
             },
             error: function (erro) {
-                console.log(erro)
+                $(".modal-body").html("E-mail e senha estão incorretos");
+                $(".modal").modal('show');
             }
         });
 

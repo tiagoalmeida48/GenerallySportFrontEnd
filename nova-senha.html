@@ -22,6 +22,8 @@
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Custom StyleSheet -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
 
@@ -103,10 +105,11 @@
                       id="redigiteSenha" aria-describedby="redigiteSenhaHelp"
                       placeholder="confirmar &nbsp; senha" required>
                       <br>
-                    <a href="/login.html">
-                    <button type="button" id="btnNovaSenha" class="btn
-                    btn-success btn-lg"><h4>Cadastar &nbsp; Nova &nbsp; Senha</h4></button>
-                    </a>
+                      <div class="btnPersonalizado">
+                        <a href="/login.html" id="btnNovaSenha">
+                        Cadastar &nbsp; Nova &nbsp; Senha
+                        </a>
+                      </div>
                 </div>
                  
                 </form>
@@ -193,7 +196,25 @@
           </div>
         </footer>
         <!-- End Footer -->
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Informação</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
         <!-- Go To -->
         <a href="#header" class="goto-top scroll-link">
           <svg>

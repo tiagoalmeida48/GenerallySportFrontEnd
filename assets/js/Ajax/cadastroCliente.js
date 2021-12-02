@@ -100,7 +100,6 @@ $(function () {
 
     // VALIDAR CPF
     function isCpf(cpf = 0) {
-        console.log(cpf);
         cpf = cpf.replace(/\.|-/g, "");
         let soma = 0;
         soma += cpf[0] * 10;
@@ -198,7 +197,7 @@ $(function () {
                 nome: $("#nome").val(),
                 cpf: $("#cpf").val().replace('.', '').replace('.', '').replace('-', ''),
                 dataNascimento: $("#dataNascimento").val(),
-                sexo: "F",
+                sexo: $("input:radio:checked").val(),
                 celular: $("#celular").val().replace('(', '').replace(') ', '').replace('-', ''),
                 telefone: $("#telefone").val().replace('(', '').replace(') ', '').replace('-', ''),
                 email: $("#email").val(),
@@ -215,9 +214,8 @@ $(function () {
                 }
             };
 
-            localStorage.setItem('cpf', cliente.cpf);
+            sessionStorage.setItem('cpf', cliente.cpf);
 
-            console.log(JSON.stringify(cliente));
             if (idCliente != null && idCliente != "") {
                 $.ajax({
                     url: 'https://localhost:44392/api/Cliente',
@@ -241,7 +239,7 @@ $(function () {
                     }
                 });
             }
-            //location.href = 'cadastro-foto.html'
+            location.href = 'cadastro-foto.html'
         }
     });
 });

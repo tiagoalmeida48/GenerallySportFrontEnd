@@ -3,7 +3,7 @@ $(function(){
     var idPedidos = [];
     
     $.ajax({
-        url: 'https://localhost:44392/api/pedidovenda/itenspedido/',
+        url: 'https://localhost:44392/api/voucher/pedidovendavoucher',
         type: "GET",
         dataType: "json",
         contentType: "application/json; charset=utf-8",
@@ -21,35 +21,30 @@ $(function(){
 
     function mostrarCarrinho(result){
         var valorTotal = 0;
+        console.log(result)
 
         for (i in result) {
-            let dataEntrega = result[i].pedidoVenda.dataEntregavenda;
-            let dataPedido = result[i].pedidoVenda.dataPedidovenda;
-            let split1 = dataEntrega.split('T'); //separa a data da hora
+            let dataPedido = result[i].dataPedidovenda;
             let split2 = dataPedido.split('T'); //separa a data da hora
-            let sp1 = split1[0].split('-');
             let sp2 = split2[0].split('-');
-            let formatarDataEntrega = `${sp1[2]}/${sp1[1]}/${sp1[0]}`;
             let formatarDataPedido = `${sp2[2]}/${sp2[1]}/${sp2[0]}`;
 
             $(".tabelaCarrinho tbody").append(`
                 <tr>
                     <td width="200px"></td>
                     <td width="130px">
-                        <img src="./assets/images/produtos/${result[i].produto.caminhoFoto}" alt="">
+                        <img src="./assets/images/vouchers/v${result[i].idVoucher}.png" alt="">
                     </td>
                     <td width="200px">
-                        Produto: ${result[i].produto.descricao}<br>
-                        <span>Valor total: </span> 
-                        <span>${result[i].pedidoVenda.valorFinal.toLocaleString('pt-BR', {style: 'currency', 'currency': 'BRL'})}</span><br>
-                        <span>Quantidade comprada: </span>
-                        <span>${result[i].qtde}</span><br>
+                        Voucher 0${result[i].idVoucher}<br>
+                        <span>Valor: </span> 
+                        <span>${result[i].valorFinal.toLocaleString('pt-BR', {style: 'currency', 'currency': 'BRL'})}</span><br>
+                        <span>Data da compra:<br>${formatarDataPedido}</span><br>
                     </td>
                     <td>
-                        <span>Forma de pagamento: ${result[i].pedidoVenda.condicaoPagamento}</span><br>
-                        <span>Data da compra: ${formatarDataPedido}</span><br>
-                        <span>Data da Entrega: ${formatarDataEntrega}</span><br>
-                        
+                        <span>Forma de pagamento: ${result[i].condicaopagamento = 'boleto'? 'Boleto':"Cartão / Débito"}</span><br>
+                        <span>Validado: ${result[i].validado == 'VALIDADO' ? "SIM" : "NÃO"}<br>
+                        <span>Número para validar: ${result[i].validado == 'VALIDADO' ? "" : result[i].validado}
                     </td>
                     <td width="200px"></td>
                 </tr>

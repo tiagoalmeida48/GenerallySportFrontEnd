@@ -20,7 +20,8 @@ $(function(){
                 location.href = 'login.html';
             },
             error: function (err) {
-                console.log(err);
+                $(".modal-body").html("Ocorreu um erro, tente novamente");
+                $(".modal").modal('show');
             },
             complete: function () {
             

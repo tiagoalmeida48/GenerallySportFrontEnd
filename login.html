@@ -22,6 +22,8 @@
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Custom StyleSheet -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
 
@@ -95,14 +97,15 @@
                     <input type="password" class="form-control form-control-lg"
                       id="senha" placeholder="senha" required>
                   </div>
-                  <button type="button" id="btnAcessarLogin" class="btn
-                    btn-success btn-lg">Acessar</button>
-                  <br><br>
-                  <a href="/recupera-senha.html">
-                    <button type="button" class="btn btn-warning btn-lg"> Clique
-                      aqui para se Cadastrar.</button>
-                  </a>
-
+                  <div class="btnPersonalizado">
+                    <a href="" id="btnAcessarLogin">Acessar</a>
+                  </div>
+                  <div class="btnPersonalizado">
+                    <a href="/recupera-senha.html">Esqueci a senha</a>
+                  </div>
+                  <div class="btnPersonalizado">
+                    <a href="/cadastro.html">Novo cadastro</a>
+                  </div>
                 </form>
 
               </div>
@@ -188,6 +191,25 @@
         </footer>
         <!-- End Footer -->
 
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Informação</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
         <!-- Go To -->
         <a href="#header" class="goto-top scroll-link">
           <svg>
