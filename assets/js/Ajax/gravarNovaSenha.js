@@ -16,7 +16,6 @@ $(function(){
             type: "PUT",
             dataType: "json",
             contentType: "application/json; charset=utf-8",
-            headers: { 'Authorization': 'Bearer ' + token },
             data: JSON.stringify(novaSenha),
             success: function(){
                 location.href = 'nova-senha.html';
