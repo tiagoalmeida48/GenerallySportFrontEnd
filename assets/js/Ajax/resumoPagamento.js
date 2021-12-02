@@ -1,4 +1,5 @@
 $(function () {
+    var token = sessionStorage.getItem('token');
     var idCliente = sessionStorage.getItem('idCliente');
     var formaPag = sessionStorage.getItem('formaPagamento');
     var valorTotal = sessionStorage.getItem('valorTotalPedido');
